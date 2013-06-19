@@ -4,7 +4,7 @@
 
 -include("starcraft.hrl").
 
-all_feature_test_() ->
+should_start_starcraft_with_test_() ->
     {foreach,
      fun setup/0,
      fun cleanup/1,

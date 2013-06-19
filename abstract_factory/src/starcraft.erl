@@ -5,9 +5,13 @@
 
 -include("starcraft.hrl").
 
-start(Race) when Race == terran orelse
-		 Race == zerg orelse
-		 Race == protoss ->
+-define(TERRAN, terran).
+-define(ZERG, zerg).
+-define(PROTOSS, protoss).
+
+start(Race) when Race == ?TERRAN orelse
+		 Race == ?ZERG orelse
+		 Race == ?PROTOSS ->
     Species = generate_race(Race),
     start_game(Species);
 start(_) ->
