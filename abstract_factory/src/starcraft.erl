@@ -12,7 +12,7 @@
 start(Race) when Race == ?TERRAN orelse
 		 Race == ?ZERG orelse
 		 Race == ?PROTOSS ->
-    Species = generate_race(Race),
+    Species = generate_species(Race),
     start_game(Species);
 start(_) ->
     io:format("Not valid species").
@@ -22,8 +22,8 @@ start_game(Species) ->
 	      "with 3 ~p "
 	      "and a ~p~n",
 	      [Species#species.race,
-	      Species#species.worker_unit,
-	      Species#species.base_building]).
+	       Species#species.worker_unit,
+	       Species#species.base_building]).
 
-generate_race(Race) ->
+generate_species(Race) ->
     Race:generate_species().
